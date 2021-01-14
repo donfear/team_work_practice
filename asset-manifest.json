@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/team_work_practice/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/team_work_practice/static/js/main.ebad48a5.chunk.js",
+    "main.js.map": "/team_work_practice/static/js/main.ebad48a5.chunk.js.map",
+    "runtime-main.js": "/team_work_practice/static/js/runtime-main.f04e48b0.js",
+    "runtime-main.js.map": "/team_work_practice/static/js/runtime-main.f04e48b0.js.map",
+    "static/js/2.de1f0094.chunk.js": "/team_work_practice/static/js/2.de1f0094.chunk.js",
+    "static/js/2.de1f0094.chunk.js.map": "/team_work_practice/static/js/2.de1f0094.chunk.js.map",
+    "static/js/3.3d18b6d5.chunk.js": "/team_work_practice/static/js/3.3d18b6d5.chunk.js",
+    "static/js/3.3d18b6d5.chunk.js.map": "/team_work_practice/static/js/3.3d18b6d5.chunk.js.map",
+    "index.html": "/team_work_practice/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/team_work_practice/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.de1f0094.chunk.js.LICENSE.txt": "/team_work_practice/static/js/2.de1f0094.chunk.js.LICENSE.txt",
+    "static/media/logo.103b5fa1.svg": "/team_work_practice/static/media/logo.103b5fa1.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f04e48b0.js",
+    "static/js/2.de1f0094.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.ebad48a5.chunk.js"
+  ]
+}

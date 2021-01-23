@@ -1,0 +1,33 @@
+@import "../../../styles/index.scss";
+.language-selector {
+  &__icon {
+    height: 44px;
+    width: 44px;
+    font-size: 44px;
+    display: flex;
+    align-items: center;
+    padding-top: 4px;
+    cursor: pointer;
+  }
+  position: relative;
+  &__list {
+    position: absolute;
+    width: 120px;
+    top: 64px;
+    right: 0px;
+    background: $primary-light-color;
+    color: $primary-dark-color;
+    border-radius: 15px;
+    &--item {
+        user-select: none;
+        cursor: pointer;
+        padding: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &--selected {
+            color: $primary-button-color;
+        }
+    }
+  }
+}

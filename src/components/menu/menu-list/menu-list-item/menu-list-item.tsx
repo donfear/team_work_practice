@@ -8,24 +8,25 @@ interface IMenuListItemProps extends IMenuListItem {
   onClick: Function;
 }
 export function MenuListItem(props: IMenuListItemProps) {
-    const size = useWindowSize();
+  const size = useWindowSize();
 
-    const getLabel = () => {
-        if (size.width < 992) {
-            const splitted = props.label.split(' ');
-            return splitted?.[0]?.[0] + (splitted?.[1]?.[0] || '');
-        }
-        return props.label;
+  const getLabel = () => {
+    if (size.width < 992) {
+      const splitted = props.label.split(" ");
+      return splitted?.[0]?.[0] + (splitted?.[1]?.[0] || "");
     }
+    return props.label;
+  };
 
-    return (
-        <div
-          onClick={() => props.onClick(props.id)}
-          className={`menu-list-item ${
-            props.selected ? "menu-list-item--selected" : ""
-          }`}
-        >
-          {getLabel()}
-        </div>
-      );
+  return (
+    <div
+      {...size.width < 992 && {'data-tip': props.label}}
+      onClick={() => props.onClick(props.id)}
+      className={`menu-list-item ${
+        props.selected ? "menu-list-item--selected" : ""
+      }`}
+    >
+      {getLabel()}
+    </div>
+  );
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import ReactTooltip from "react-tooltip";
 import { Content } from "./components/content/content";
 import { Header } from "./components/header/header";
 import { Menu } from "./components/menu/menu";
@@ -13,6 +14,7 @@ function App() {
           <Menu />
           <Content />
         </div>
+        <ReactTooltip/>
       </div>
     </GlobalStateProvider>
   );

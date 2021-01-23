@@ -1,0 +1,37 @@
+import { Certificate } from "crypto";
+import React from "react";
+import { useGlobalState } from "../../state/state";
+import { EMenuListItemId } from "../../types/enums/menu-list-item-id.enum";
+import { Certificates } from "./certificates/certificates";
+import { Education } from "./education/education";
+import { LanguageSkills } from "./language-skills/language-skills";
+import { PersonalInformation } from "./personal-information/personal-information";
+import { Recommendations } from "./recommendations/recommendations";
+import { ShortDescription } from "./short-description/short-description";
+import { Skills } from "./skills/skills";
+import { WorkExperience } from "./work-experience/work-experience";
+
+export function Content() {
+  const [state, dispatch] = useGlobalState();
+  function renderContent() {
+    switch (state.selectedMenuId) {
+      case EMenuListItemId.PERSONAL_INFORMATION:
+        return <PersonalInformation />;
+      case EMenuListItemId.EDUCATION:
+        return <Education />;
+      case EMenuListItemId.LANGUAGE_SKILLS:
+        return <LanguageSkills />;
+      case EMenuListItemId.RECOMMENDATIONS:
+        return <Recommendations />;
+      case EMenuListItemId.SHORT_DESCRIPTION:
+        return <ShortDescription />;
+      case EMenuListItemId.WORK_EXPERIENCE:
+        return <WorkExperience />;
+      case EMenuListItemId.SKILLS:
+        return <Skills/>;
+      case EMenuListItemId.CERTIFICATES:
+        return <Certificates />;
+    }
+  }
+  return <div>{renderContent()}</div>;
+}

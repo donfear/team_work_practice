@@ -1,0 +1,23 @@
+@import '../../../../styles/index.scss';
+
+.menu-list-item {
+    height: 40px;
+    color: $primary-dark-color;
+    border: 1px solid $primary-dark-color;
+    border-radius: 20px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px;
+    cursor: pointer;
+    transition: 0.1s all ease;
+
+    &--selected {
+        border: 1px solid $primary-button-color;
+    }
+
+    & + & {
+        margin-top: 8px;
+    }
+}

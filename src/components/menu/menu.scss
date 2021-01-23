@@ -1,0 +1,11 @@
+@import '../../styles//index.scss';
+
+.menu {
+    width: 25%;
+    background: $primary-light-color;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

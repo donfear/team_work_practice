@@ -1,10 +1,34 @@
-import React from 'react';
-import './personal-information.scss';
+import React from "react";
+import { useGlobalState } from "../../../state/state";
+import "./personal-information.scss";
 
 export function PersonalInformation() {
-    return (
-        <div>
-            Personal Information Content
-        </div>
-    )
+  const [state, dispatch] = useGlobalState();
+
+  const fields = ["firstName", "lastName"];
+
+  return (
+    <div>
+      <div>Personal Information Content</div>
+      <div>
+        {fields.map((field, key) => (
+          <div key={key}>
+            {field}
+            <input
+              type="text"
+              value={(state.personalInformationForm as any)?.[field] || ""}
+              onChange={(ev: any) =>
+                dispatch({
+                  personalInformationForm: {
+                    ...state.personalInformationForm,
+                    [field]: ev.target.value,
+                  },
+                })
+              }
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }

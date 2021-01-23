@@ -1,12 +1,7 @@
 import React from "react";
-import { EMenuListItemId } from "../types/enums/menu-list-item-id.enum";
+import { defaultGlobalState, IGlobalState } from "./default.state";
 
-interface IGlobalState {
-  selectedMenuId: EMenuListItemId;
-}
-const defaultGlobalState: IGlobalState = {
-  selectedMenuId: EMenuListItemId.PERSONAL_INFORMATION,
-};
+
 function getDefaultState() {
   const stateFromLS = localStorage.getItem('state');
   if (!!stateFromLS) {

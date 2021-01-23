@@ -5,7 +5,7 @@ import "./personal-information.scss";
 export function PersonalInformation() {
   const [state, dispatch] = useGlobalState();
 
-  const fields = ["firstName", "lastName"];
+  const fields = Object.keys(state.personalInformationForm);
 
   return (
     <div>

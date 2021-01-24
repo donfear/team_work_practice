@@ -3,7 +3,8 @@ language: node_js
 node_js:
   - "14"
 
+before_script:
+  - sh prepare-deploy.sh
 script:
-  - npm run homepage.deploy
   - npm run build
   - npm run deploy

@@ -1,4 +1,3 @@
-import { Certificate } from "crypto";
 import React from "react";
 import { useGlobalState } from "../../state/state";
 import { EMenuListItemId } from "../../types/enums/menu-list-item-id.enum";
@@ -12,7 +11,7 @@ import { Skills } from "./skills/skills";
 import { WorkExperience } from "./work-experience/work-experience";
 
 export function Content() {
-  const [state, dispatch] = useGlobalState();
+  const [state] = useGlobalState();
   function renderContent() {
     switch (state.selectedMenuId) {
       case EMenuListItemId.PERSONAL_INFORMATION:

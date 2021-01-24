@@ -7,4 +7,10 @@ before_script:
   - sh prepare-deploy.sh
 script:
   - npm run build
-  - npm run deploy
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: 909e52cd6eedaf48ea5192c56f8ba09a13e81f69
+  keep_history: true
+  on:
+    branch: main

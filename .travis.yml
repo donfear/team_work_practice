@@ -1,0 +1,9 @@
+language: node_js
+
+node_js:
+  - "14"
+
+script:
+  - npm run homepage.deploy
+  - npm run build
+  - npm run deploy

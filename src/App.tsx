@@ -3,6 +3,7 @@ import ReactTooltip from "react-tooltip";
 import { Content } from "./components/content/content";
 import { Header } from "./components/header/header";
 import { Menu } from "./components/menu/menu";
+import { Preview } from "./components/preview/preview";
 import { GlobalStateProvider } from "./state/state";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Content />
         </div>
         <ReactTooltip/>
+        <Preview/>
       </div>
     </GlobalStateProvider>
   );

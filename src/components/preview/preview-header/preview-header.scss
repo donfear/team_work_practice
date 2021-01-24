@@ -1,0 +1,9 @@
+.preview-header {
+    display: flex;
+    justify-content: flex-end;
+
+    &--cross {
+        cursor: pointer;
+        font-size: 32px;
+    }
+}

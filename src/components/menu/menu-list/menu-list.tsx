@@ -21,6 +21,11 @@ const menuListItems: IMenuListItem[] = [
 
 export function MenuList() {
   const [state, dispatch] = useGlobalState();
+
+  function handlePreviewClick() {
+      dispatch({isPreviewOpen: true});
+  }
+
   return (
     <div className="menu-list">
       {menuListItems.map((listItem) => (
@@ -31,6 +36,14 @@ export function MenuList() {
           {...listItem}
         />
       ))}
+      <div className="menu-list__separator"/>
+      <MenuListItem
+        label="Preview"
+        preview
+        selected
+        onClick={() => handlePreviewClick()}
+        id={null as any}
+      />
     </div>
   );
 }

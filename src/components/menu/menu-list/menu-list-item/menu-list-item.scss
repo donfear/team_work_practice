@@ -23,6 +23,9 @@
     &--selected {
         border: 1px solid $primary-button-color;
     }
+    &--preview {
+        color: $primary-button-color;
+    }
 
     & + & {
         margin-top: 8px;

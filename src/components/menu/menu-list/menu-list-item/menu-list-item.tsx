@@ -6,6 +6,7 @@ import "./menu-list-item.scss";
 interface IMenuListItemProps extends IMenuListItem {
   selected: boolean;
   onClick: Function;
+  preview?: boolean
 }
 export function MenuListItem(props: IMenuListItemProps) {
   const size = useWindowSize();
@@ -24,7 +25,11 @@ export function MenuListItem(props: IMenuListItemProps) {
       onClick={() => props.onClick(props.id)}
       className={`menu-list-item ${
         props.selected ? "menu-list-item--selected" : ""
-      }`}
+      }
+      ${
+          props.preview ? 'menu-list-item--preview' : ''
+      }
+      `}
     >
       {getLabel()}
     </div>

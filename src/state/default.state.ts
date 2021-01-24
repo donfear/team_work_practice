@@ -6,6 +6,7 @@ import { IShortDescriptionForm } from "../types/interfaces/forms/short-descripti
 export interface IGlobalState {
     selectedMenuId: EMenuListItemId;
     selectedLanguage: ELanguage;
+    isPreviewOpen: boolean;
     shortDescriptionForm: IShortDescriptionForm;
     personalInformationForm: IPersonalInformationForm;
   }
@@ -20,4 +21,5 @@ export const defaultGlobalState: IGlobalState = {
     firstName: "",
     lastName: "",
   },
+  isPreviewOpen: false
 };

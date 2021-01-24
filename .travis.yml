@@ -8,5 +8,6 @@ script:
 deploy:
   provider: pages
   keep_history: true
+  github_token: $github_token
   on:
     branch: main

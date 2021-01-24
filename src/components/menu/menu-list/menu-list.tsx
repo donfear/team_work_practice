@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { IMenuListItem } from "../../../types/interfaces/menu-list-item.interface";
 import { EMenuListItemId } from "../../../types/enums/menu-list-item-id.enum";
 import { MenuListItem } from "./menu-list-item/menu-list-item";

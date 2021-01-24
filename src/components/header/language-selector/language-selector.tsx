@@ -4,7 +4,7 @@ import { useGlobalState } from "../../../state/state";
 import { ELanguage } from "../../../types/enums/language.enum";
 import "./language-selector.scss";
 export function LanguageSelector() {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   const languages: ELanguage[] = [ELanguage.EN, ELanguage.RU, ELanguage.EE];
 
@@ -13,18 +13,18 @@ export function LanguageSelector() {
   const [isLanguagePickerOpen, setLanguagePickerOpen] = useState(false);
 
   function getLanguageIcon(): string {
-      return getLanguageIconFromLanguage(state.selectedLanguage)
+    return getLanguageIconFromLanguage(state.selectedLanguage);
   }
 
   function getLanguageIconFromLanguage(language: ELanguage) {
     switch (language) {
-        case ELanguage.EE:
-          return "🇪🇪";
-        case ELanguage.EN:
-          return "🇺🇸";
-        case ELanguage.RU:
-          return "🇷🇺";
-      }
+      case ELanguage.EE:
+        return "🇪🇪";
+      case ELanguage.EN:
+        return "🇺🇸";
+      case ELanguage.RU:
+        return "🇷🇺";
+    }
   }
 
   return (
@@ -40,7 +40,11 @@ export function LanguageSelector() {
         <div className="language-selector__list">
           {languages.map((lng) => (
             <div
-              className={`language-selector__list--item ${lng === state.selectedLanguage ? 'language-selector__list--item--selected' : ''}`}
+              className={`language-selector__list--item ${
+                lng === state.selectedLanguage
+                  ? "language-selector__list--item--selected"
+                  : ""
+              }`}
               key={lng}
               onClick={() => {
                 setLanguagePickerOpen(!isLanguagePickerOpen);

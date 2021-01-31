@@ -1,21 +1,22 @@
 import React from "react";
 import { useGlobalState } from "../../../state/state";
+import { ContentWrapper } from "../content-wrapper/content-wrapper";
+import "./short-description.scss";
 
 export function ShortDescription() {
   const [state, dispatch] = useGlobalState();
 
   return (
-    <div>
-      <div>shortDescription Information Content</div>
-      <div>
-        <input
-          type="text"
-          value={state.shortDescriptionForm?.description || ''}
-          onChange={(ev: {target: {value: string}}) =>
-            dispatch({ shortDescriptionForm: { description: ev.target.value } })
+    <ContentWrapper label="Short Description">
+      <textarea
+        className="short-description"
+        value={state.shortDescriptionForm.description}
+        onChange={(ev) => dispatch({
+          shortDescriptionForm: {
+            description: ev.target.value
           }
-        />
-      </div>
-    </div>
+        })}
+      ></textarea>
+    </ContentWrapper>
   );
 }

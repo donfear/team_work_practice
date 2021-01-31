@@ -1,0 +1,25 @@
+@import '../../../styles/index.scss';
+
+.language-skills {
+    &__delete {
+        align-items: center;
+        margin-top: 24px;
+    }
+    &__ranges {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+    }
+    &__range {
+        width: 132px;
+        margin-left: 16px;
+        margin-top: 8px;
+        &--label {
+            display: flex;
+            justify-content: center;
+            color: $primary-dark-color;
+            margin-bottom: 4px;
+            font-weight: bold;
+        }
+    }
+}

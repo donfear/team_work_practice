@@ -1,0 +1,14 @@
+.skills {
+    &__row {
+        display: flex;
+        flex-basis: 100%;
+        align-items: center;
+        justify-content: space-between;
+        & + & {
+            margin-top: 12px;
+        }
+    }
+    &__delete {
+        cursor: pointer;
+    }
+}

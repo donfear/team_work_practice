@@ -1,0 +1,11 @@
+@import '../../../styles/index.scss';
+
+.short-description {
+    height: 120px;
+    border-radius: 22px;
+    background: white;
+    padding: 16px 16px;
+    outline: none;
+    border: 1px solid $primary-dark-color;
+    width: 80%;
+}

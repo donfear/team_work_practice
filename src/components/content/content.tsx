@@ -1,7 +1,6 @@
 import React from "react";
 import { useGlobalState } from "../../state/state";
 import { EMenuListItemId } from "../../types/enums/menu-list-item-id.enum";
-import { Certificates } from "./certificates/certificates";
 import { Education } from "./education/education";
 import { LanguageSkills } from "./language-skills/language-skills";
 import { PersonalInformation } from "./personal-information/personal-information";
@@ -9,6 +8,7 @@ import { Recommendations } from "./recommendations/recommendations";
 import { ShortDescription } from "./short-description/short-description";
 import { Skills } from "./skills/skills";
 import { WorkExperience } from "./work-experience/work-experience";
+import './content.scss';
 
 export function Content() {
   const [state] = useGlobalState();
@@ -28,9 +28,7 @@ export function Content() {
         return <WorkExperience />;
       case EMenuListItemId.SKILLS:
         return <Skills/>;
-      case EMenuListItemId.CERTIFICATES:
-        return <Certificates />;
     }
   }
-  return <div>{renderContent()}</div>;
+  return <div className="content">{renderContent()}</div>;
 }

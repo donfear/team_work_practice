@@ -21,7 +21,7 @@ const dispatchStateContext = React.createContext(undefined) as any;
 export const GlobalStateProvider = ({ children }: any) => {
   const [state, dispatch] = React.useReducer(
     (state: IGlobalState, newValue: Partial<IGlobalState>) => {
-      localStorage.setItem('state', JSON.stringify({ ...state, ...newValue }));
+      // localStorage.setItem('state', JSON.stringify({ ...state, ...newValue }));
       return {
         ...state,
         ...newValue,

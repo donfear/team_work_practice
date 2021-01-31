@@ -1,0 +1,18 @@
+@import '../../../styles/index.scss';
+
+.add-more {
+    border-top: 2px solid $primary-dark-color;
+    margin-top: 32px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    &__button {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        color: $primary-dark-color;
+        margin: 8px 0;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}

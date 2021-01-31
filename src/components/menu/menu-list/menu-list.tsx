@@ -14,7 +14,6 @@ const menuListItems: IMenuListItem[] = [
   { label: "Skills", id: EMenuListItemId.SKILLS },
   { label: "Work Experience", id: EMenuListItemId.WORK_EXPERIENCE },
   { label: "Education", id: EMenuListItemId.EDUCATION },
-  { label: "Certificates", id: EMenuListItemId.CERTIFICATES },
   { label: "Language Skills", id: EMenuListItemId.LANGUAGE_SKILLS },
   { label: "Recommendations", id: EMenuListItemId.RECOMMENDATIONS },
 ];
@@ -23,7 +22,10 @@ export function MenuList() {
   const [state, dispatch] = useGlobalState();
 
   function handlePreviewClick() {
-      dispatch({isPreviewOpen: true});
+    dispatch({ isPreviewOpen: true });
+  }
+  function handleSaveClick() {
+    localStorage.setItem("state", JSON.stringify(state));
   }
 
   return (
@@ -36,12 +38,19 @@ export function MenuList() {
           {...listItem}
         />
       ))}
-      <div className="menu-list__separator"/>
+      <div className="menu-list__separator" />
       <MenuListItem
         label="Preview"
         preview
         selected
         onClick={() => handlePreviewClick()}
+        id={null as any}
+      />
+      <MenuListItem
+        label="Save"
+        preview
+        selected
+        onClick={() => handleSaveClick()}
         id={null as any}
       />
     </div>

@@ -1,5 +1,8 @@
 import React from "react";
+import { camelCaseToTitle } from "../../../helpers/camel-case-to-title";
 import { useGlobalState } from "../../../state/state";
+import { Input } from "../../ui/input/input";
+import { ContentWrapper } from "../content-wrapper/content-wrapper";
 import "./personal-information.scss";
 
 export function PersonalInformation() {
@@ -8,27 +11,25 @@ export function PersonalInformation() {
   const fields = Object.keys(state.personalInformationForm);
 
   return (
-    <div>
-      <div>Personal Information Content</div>
-      <div>
+    <ContentWrapper label='Personal Information'>
+      <div className="content-wrapper__fields">
         {fields.map((field, key) => (
-          <div key={key}>
-            {field}
-            <input
-              type="text"
-              value={(state.personalInformationForm as any)?.[field] || ""}
-              onChange={(ev: any) =>
-                dispatch({
-                  personalInformationForm: {
-                    ...state.personalInformationForm,
-                    [field]: ev.target.value,
-                  },
-                })
-              }
-            />
-          </div>
+          <Input
+            key={key}
+            label={camelCaseToTitle(field)}
+            type="text"
+            value={(state.personalInformationForm)?.[field] || ""}
+            onChange={(ev: any) =>
+              dispatch({
+                personalInformationForm: {
+                  ...state.personalInformationForm,
+                  [field]: ev.target.value,
+                },
+              })
+            }
+          />
         ))}
       </div>
-    </div>
+    </ContentWrapper>
   );
 }

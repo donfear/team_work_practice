@@ -1,4 +1,3 @@
-import { spawn } from "child_process";
 import React from "react";
 import "./input.scss";
 

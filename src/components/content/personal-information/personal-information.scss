@@ -1,0 +1,44 @@
+@import "../../../styles/index.scss";
+
+.personal-information {
+  &__image {
+    height: 100px;
+    width: 100px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 10px;
+    img {
+      border-radius: 6px;
+      height: 100%;
+      width: 100%;
+    }
+    &-delete {
+      position: absolute;
+      top: -12px;
+      z-index: 1;
+      right: -12px;
+      border: 1px solid $primary-dark-color;
+      background: white;
+      border-radius: 50%;
+      height: 36px;
+      width: 36px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $primary-dark-color;
+    }
+  }
+  &__image-uploader {
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+  }
+}
+.fileContainer {
+  align-items: center;
+  box-shadow: none;
+  flex-direction: row;
+}

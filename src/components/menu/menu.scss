@@ -12,4 +12,7 @@
     @media (max-width: $desktop) {
         width: 60px;
     }
+    &__long {
+        height: 100vh;
+    }
 }

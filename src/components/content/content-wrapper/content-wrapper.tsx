@@ -1,7 +1,4 @@
 import React from "react";
-import { camelCaseToTitle } from "../../../helpers/camel-case-to-title";
-import { useGlobalState } from "../../../state/state";
-import { Input } from "../../ui/input/input";
 import "./content-wrapper.scss";
 
 interface IContentWrapperProps {

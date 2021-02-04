@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/team_work_practice/static/css/main.bc3f6c60.chunk.css",
-    "main.js": "/team_work_practice/static/js/main.08490ac4.chunk.js",
-    "main.js.map": "/team_work_practice/static/js/main.08490ac4.chunk.js.map",
+    "main.js": "/team_work_practice/static/js/main.b097a1ae.chunk.js",
+    "main.js.map": "/team_work_practice/static/js/main.b097a1ae.chunk.js.map",
     "runtime-main.js": "/team_work_practice/static/js/runtime-main.fb444862.js",
     "runtime-main.js.map": "/team_work_practice/static/js/runtime-main.fb444862.js.map",
     "static/css/2.53bd30e3.chunk.css": "/team_work_practice/static/css/2.53bd30e3.chunk.css",
@@ -22,6 +22,6 @@
     "static/css/2.53bd30e3.chunk.css",
     "static/js/2.e5388af9.chunk.js",
     "static/css/main.bc3f6c60.chunk.css",
-    "static/js/main.08490ac4.chunk.js"
+    "static/js/main.b097a1ae.chunk.js"
   ]
 }

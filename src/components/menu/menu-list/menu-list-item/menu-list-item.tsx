@@ -18,7 +18,6 @@ export function MenuListItem(props: IMenuListItemProps) {
     }
     return props.label;
   };
-
   return (
     <div
       {...size.width < 992 && {'data-tip': props.label}}

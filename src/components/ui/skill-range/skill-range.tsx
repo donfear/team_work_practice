@@ -4,7 +4,7 @@ import "./skill-range.scss";
 export function SkillRange(props: {
   value: number;
   total?: number;
-  onChange: Function;
+  onChange?: Function;
 }) {
   const total = props.total ?? 5;
   return (
@@ -14,7 +14,7 @@ export function SkillRange(props: {
         .map((i, index) => (
           <div
             key={index}
-            onClick={() => props.onChange(index)}
+            onClick={() => props.onChange?.(index)}
             className={`skill-range__item ${
               props.value >= index
                 ? "skill-range__item--selected"

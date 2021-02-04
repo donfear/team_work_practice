@@ -1,6 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import { useGlobalState } from "../../state/state";
+import { PreviewContentTemplate } from "./preview-content-template/preview-content-template";
 import { PreviewContent } from "./preview-content/preview-content";
 import { PreviewHeader } from "./preview-header/preview-header";
 import "./preview.scss";
@@ -38,7 +39,9 @@ export function Preview() {
       >
         <div className="preview">
           <PreviewHeader closeModal={closeModal} />
-          <PreviewContent />
+          <PreviewContent>
+            <PreviewContentTemplate/>
+          </PreviewContent>
         </div>
       </Modal>
     </div>

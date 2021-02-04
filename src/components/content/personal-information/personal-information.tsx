@@ -5,11 +5,13 @@ import { Input } from "../../ui/input/input";
 import { ContentWrapper } from "../content-wrapper/content-wrapper";
 import ImageUploader from "react-images-upload";
 import "./personal-information.scss";
+import { useTranslation } from "react-i18next";
 
 export function PersonalInformation() {
   const [state, dispatch] = useGlobalState();
 
   const fields = Object.keys(state.personalInformationForm);
+  const {t} = useTranslation();
 
   const getBase64 = async (file: File) => {
     return await new Promise((resolve, reject) => {
@@ -21,7 +23,7 @@ export function PersonalInformation() {
   };
 
   return (
-    <ContentWrapper label="Personal Information">
+    <ContentWrapper label={t("Personal Information")}>
       <div>
         <div className="content-wrapper__fields">
           {fields
@@ -29,7 +31,7 @@ export function PersonalInformation() {
             .map((field, key) => (
               <Input
                 key={key}
-                label={camelCaseToTitle(field)}
+                label={(camelCaseToTitle(t(field)))}
                 type="text"
                 value={state.personalInformationForm?.[field] || ""}
                 onChange={(ev: any) =>
@@ -46,7 +48,7 @@ export function PersonalInformation() {
         <div className="personal-information__image-uploader">
           {state.personalInformationForm.image && (
             <div className="personal-information__image">
-              <img src={state.personalInformationForm.image} alt="image" />
+              <img src={state.personalInformationForm.image} alt="personal-phone" />
               <div
                 className="content-wrapper__delete personal-information__image-delete"
                 onClick={() => {
@@ -65,7 +67,8 @@ export function PersonalInformation() {
           <ImageUploader
             singleImage
             withIcon={true}
-            buttonText="Choose images"
+            withLabel={false}
+            buttonText={t("Choose images")}
             onChange={async (ev) => {
               const base = await getBase64(ev[0]);
 

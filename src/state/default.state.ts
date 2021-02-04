@@ -37,7 +37,6 @@ export interface IGlobalState {
     speaking: number;
   }[];
   recommendationsForm: {
-    referee: string;
     fullName: string;
     organization: string;
     position: string;
@@ -93,7 +92,6 @@ export const defaultGlobalState: IGlobalState = {
   ],
   recommendationsForm: [
     {
-      referee: "",
       fullName: "",
       organization: "",
       position: "",

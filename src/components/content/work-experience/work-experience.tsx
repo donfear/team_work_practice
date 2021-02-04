@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { camelCaseToTitle } from "../../../helpers/camel-case-to-title";
 import { useGlobalState } from "../../../state/state";
 import { AddMore } from "../../ui/add-more/add-more";
@@ -7,7 +8,7 @@ import { ContentWrapper } from "../content-wrapper/content-wrapper";
 
 export function WorkExperience() {
   const [state, dispatch] = useGlobalState();
-
+  const {t} = useTranslation();
   function changeField(index: number, field: string, value: string) {
     const form = [...state.workExperienceForm];
     const item = {
@@ -19,7 +20,7 @@ export function WorkExperience() {
   }
 
   return (
-    <ContentWrapper label="Work experience">
+    <ContentWrapper label={t("Work Experience")}>
       <div>
         {state.workExperienceForm.map((f, key) => (
           <div key={key+'kek'} className="content-wrapper__fields-block">
@@ -27,7 +28,7 @@ export function WorkExperience() {
               {Object.keys(f).map((field, index) => (
                 <Input
                   key={index+'keks'}
-                  label={camelCaseToTitle(field)}
+                  label={(camelCaseToTitle(t(field)))}
                   type="text"
                   value={(f as any)[field] || ""}
                   onChange={(ev: any) =>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useGlobalState } from "../../../state/state";
 import { AddMore } from "../../ui/add-more/add-more";
 import { Input } from "../../ui/input/input";
@@ -8,6 +9,7 @@ import "./skills.scss";
 
 export function Skills() {
   const [state, dispatch] = useGlobalState();
+  const {t} = useTranslation();
   function changeName(index: number, value: string) {
     let items = [...state.skillsForm];
     let item = {
@@ -32,7 +34,7 @@ export function Skills() {
   }
 
   return (
-    <ContentWrapper label="Skills">
+    <ContentWrapper label={t("Skills")}>
       {state.skillsForm.map((f, id) => (
         <div className="skills__row" key={id}>
           <Input

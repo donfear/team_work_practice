@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useGlobalState } from "../../../state/state";
 import { AddMore } from "../../ui/add-more/add-more";
 import { Input } from "../../ui/input/input";
@@ -8,6 +9,7 @@ import "./language-skills.scss";
 
 export function LanguageSkills() {
   const [state, dispatch] = useGlobalState();
+  const {t} = useTranslation();
   function changeField(index: number, field: string, value: string) {
     const form = [...state.languageForm];
     const item = {
@@ -19,14 +21,14 @@ export function LanguageSkills() {
   }
 
   return (
-    <ContentWrapper label="Language Skills">
+    <ContentWrapper label={t("Language Skills")}>
       <div className="language-skills">
         {state.languageForm.map((l, lindex) => (
           <div className="language-skills__field" key={lindex}>
             <div style={{ display: "flex" }}>
               <div style={{ width: "100%" }}>
                 <Input
-                  label="Language"
+                  label={t("Language")}
                   value={l.language}
                   onChange={(ev: any) =>
                     changeField(lindex, "language", ev.target.value)
@@ -48,28 +50,28 @@ export function LanguageSkills() {
             </div>
             <div className="language-skills__ranges">
               <div className="language-skills__range">
-                <div className="language-skills__range--label">Listening</div>
+                <div className="language-skills__range--label">{t('Listening')}</div>
                 <SkillRange
                   value={l.listening}
                   onChange={(val: any) => changeField(lindex, "listening", val)}
                 />
               </div>
               <div className="language-skills__range">
-                <div className="language-skills__range--label">Reading</div>
+                <div className="language-skills__range--label">{t('Reading')}</div>
                 <SkillRange
                   value={l.reading}
                   onChange={(val: any) => changeField(lindex, "reading", val)}
                 />
               </div>
               <div className="language-skills__range">
-                <div className="language-skills__range--label">Writing</div>
+                <div className="language-skills__range--label">{t('Writing')}</div>
                 <SkillRange
                   value={l.writing}
                   onChange={(val: any) => changeField(lindex, "writing", val)}
                 />
               </div>
               <div className="language-skills__range">
-                <div className="language-skills__range--label">Speaking</div>
+                <div className="language-skills__range--label">{t('Speaking')}</div>
                 <SkillRange
                   value={l.speaking}
                   onChange={(val: any) => changeField(lindex, "speaking", val)}

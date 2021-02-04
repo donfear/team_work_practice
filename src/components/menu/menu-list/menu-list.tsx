@@ -4,6 +4,8 @@ import { EMenuListItemId } from "../../../types/enums/menu-list-item-id.enum";
 import { MenuListItem } from "./menu-list-item/menu-list-item";
 import "./menu-list.scss";
 import { useGlobalState } from "../../../state/state";
+import { useTranslation } from "react-i18next";
+import { toast } from 'react-toastify';
 
 const menuListItems: IMenuListItem[] = [
   {
@@ -19,6 +21,8 @@ const menuListItems: IMenuListItem[] = [
 ];
 
 export function MenuList() {
+  const { t } = useTranslation();
+
   const [state, dispatch] = useGlobalState();
 
   function handlePreviewClick() {
@@ -26,7 +30,16 @@ export function MenuList() {
   }
   function handleSaveClick() {
     localStorage.setItem("state", JSON.stringify(state));
-  }
+    toast.success(t('Saved'), {
+      position: "bottom-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      });
+      }
 
   return (
     <div className="menu-list">
@@ -36,18 +49,19 @@ export function MenuList() {
           onClick={(id: EMenuListItemId) => dispatch({ selectedMenuId: id })}
           selected={listItem.id === state.selectedMenuId}
           {...listItem}
+          label={t(listItem.label)}
         />
       ))}
       <div className="menu-list__separator" />
       <MenuListItem
-        label="Preview"
+        label={t("Preview")}
         preview
         selected
         onClick={() => handlePreviewClick()}
         id={null as any}
       />
       <MenuListItem
-        label="Save"
+        label={t("Save")}
         preview
         selected
         onClick={() => handleSaveClick()}

@@ -22,3 +22,24 @@ body {
     display: flex;
   }
 }
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.center {
+  align-items: center;
+  justify-content: center;
+}
+.btn-color {
+  color: $primary-button-color;
+}
+.bold {
+  font-weight: bold;
+}

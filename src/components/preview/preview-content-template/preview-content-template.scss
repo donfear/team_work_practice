@@ -1,0 +1,91 @@
+@import '../../../styles/index.scss';
+
+.preview-content {
+    &__header {
+        height: 150px;
+        background: $primary-dark-color;
+        display: flex;
+        padding: 16px 48px 16px 24px;
+        color: white;
+        justify-content: space-between;
+        &--name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        &--description {
+            padding-top: 24px;
+            font-size: 16px;
+            width: 500px;
+            overflow-wrap: anywhere;
+            font-weight: normal;
+        }
+        &--image {
+            flex-basis: 95%;
+            max-width: 100px;
+            width: 25%;
+            height: 100px;
+            border-radius: 20px;
+            border: 2px solid $primary-button-color;
+            img {
+                border-radius: 18px;
+                height: 100%;
+                width: 100%;
+            }
+        }
+        &--tags {
+            display: flex;
+            background: #353e4d;
+            color: white;
+            height: 50px;
+            align-items: center;
+            font-weight: bold;
+            justify-content: space-around;
+            span + span {
+                margin-left: 8px;
+            }
+        }
+    }
+    &__skills {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    &__content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 24px;
+    }
+    &__education {
+        margin-left: 200px;
+    }
+    &__rec-item {
+        & + &{
+            margin-left: 16px;
+        }
+    }
+    &__work-experience {
+        display: flex;
+        flex-direction: column;
+        &--label {
+            font-size: 24px;
+            font-weight: bold;
+            color: $primary-button-color;
+            text-decoration: underline;
+            margin-bottom: 8px;
+            margin-top: 16px;
+        }
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        &-item {
+            &+& {
+                margin-top: 8px;
+            }
+            &--label {
+                font-weight: bold;
+            }
+        }
+    }
+}

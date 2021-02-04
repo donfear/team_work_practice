@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     position: relative;
-    margin-top: 10px;
+    border: 1px solid $primary-dark-color;
     img {
       border-radius: 6px;
       height: 100%;
@@ -32,13 +32,13 @@
     }
   }
   &__image-uploader {
-    padding: 12px 0;
+    padding: 0;
     display: flex;
     align-items: center;
+    margin-top: 6px;
   }
 }
 .fileContainer {
   align-items: center;
   box-shadow: none;
-  flex-direction: row;
 }

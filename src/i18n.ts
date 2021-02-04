@@ -12,13 +12,13 @@ i18n
   .init({
     fallbackLng: ELanguage.EN,
     ns: 'translation',
+    load: 'all',
     backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json'
+      loadPath: '/team_work_practice/locales/{{lng}}/{{ns}}.json'
     },
     interpolation: {
       escapeValue: false,
     },
-    lng: ELanguage.EN,
     react: {
       useSuspense: false
     }

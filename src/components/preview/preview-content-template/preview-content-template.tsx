@@ -18,7 +18,7 @@ export function PreviewContentTemplate() {
         </div>
         {!!state.personalInformationForm.image && (
           <div className="preview-content__header--image">
-            <img src={state.personalInformationForm.image} alt="personal-image" />
+            <img src={state.personalInformationForm.image} alt="personal-asd" />
           </div>
         )}
       </div>
@@ -61,7 +61,7 @@ export function PreviewContentTemplate() {
 
           <div className="preview-content__work-experience preview-content__education">
             <div className="preview-content__work-experience--label">
-              {state.educationForm?.length ? t("Education") : ""}
+              {!!state.educationForm?.length ? t("Education") : ""}
             </div>
             <div className="preview-content__list">
               {state.educationForm?.map((wf, key) => (
@@ -93,7 +93,7 @@ export function PreviewContentTemplate() {
             {!!state.languageForm?.length ? t("Language Skills") : ""}
           </div>
           <div className="preview-content__list">
-            {state.languageForm.map((wf, key) => (
+            {state.languageForm?.map((wf, key) => (
               <div className="preview-content__list-item" key={key}>
                 <div className="preview-content__list-item--label">
                   {wf.language}
@@ -130,7 +130,7 @@ export function PreviewContentTemplate() {
             {!!state.skillsForm?.length ? t("Skills") : ""}
           </div>
           <div className="preview-content__skills">
-            {state.skillsForm.map((wf, key) => (
+            {state.skillsForm?.map((wf, key) => (
               <div key={key}>
                 <div className="preview-content__list-item--label"></div>
                 <div className="row">

@@ -48,7 +48,7 @@ export function PersonalInformation() {
         <div className="personal-information__image-uploader">
           {state.personalInformationForm.image && (
             <div className="personal-information__image">
-              <img src={state.personalInformationForm.image} alt="personal-phone" />
+              <img src={state.personalInformationForm.image} alt="personal-ads" />
               <div
                 className="content-wrapper__delete personal-information__image-delete"
                 onClick={() => {
